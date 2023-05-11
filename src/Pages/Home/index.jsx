@@ -11,6 +11,7 @@ function Home() {
   const currentPath = window.location.pathname
   let index = capitalizarPrimeraLetra(currentPath.substring(currentPath.lastIndexOf('/')+1))
   const renderView = ()=>{
+
     if(context.searchByTitle?.length > 0){
       if(context.filterItems?.length > 0){
         if(index){
@@ -21,7 +22,7 @@ function Home() {
           )
         }else{
       return (
-          context.filterItems?.map((item)=>(
+          context.items?.map((item)=>(
             <Card key={item.id} data = {item}/>
          ))
         )}}else{
@@ -39,8 +40,9 @@ function Home() {
          ))
         )
       }else{
+  
     return (
-        context.filterItems?.map((item)=>(
+        context.items?.map((item)=>(
           <Card key={item.id} data = {item}/>
        ))
       )}
